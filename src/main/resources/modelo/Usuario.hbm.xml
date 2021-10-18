@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/10/2021 06:08:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Usuario" table="usuario" catalog="sistemaclinicav" optimistic-lock="version">
+        <id name="idUsuario" type="int">
+            <column name="ID_USUARIO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="rol" class="modelo.Rol" fetch="select">
+            <column name="ID_ROL" not-null="true" />
+        </many-to-one>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="APELLIDO" not-null="true" />
+        </property>
+        <property name="edad" type="int">
+            <column name="EDAD" not-null="true" />
+        </property>
+        <property name="especialiicion" type="string">
+            <column name="ESPECIALIICION" not-null="true" />
+        </property>
+        <property name="cargo" type="string">
+            <column name="CARGO" not-null="true" />
+        </property>
+        <set name="mascotas" table="mascota" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_USUARIO" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Mascota" />
+        </set>
+        <set name="citas" table="cita" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_USUARIO" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Cita" />
+        </set>
+        <set name="historials" table="historial" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_USUARIO" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Historial" />
+        </set>
+    </class>
+</hibernate-mapping>
