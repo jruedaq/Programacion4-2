@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/10/2021 09:28:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Rol" table="ROL" catalog="adminoneago_sistemaclinicavETITC" optimistic-lock="version">
+        <id name="idRol" type="int">
+            <column name="ID_ROL" />
+            <generator class="assigned" />
+        </id>
+        <property name="rol" type="string">
+            <column name="ROL" not-null="true" />
+        </property>
+        <set name="usuarios" table="USUARIO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_ROL" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Usuario" />
+        </set>
+    </class>
+</hibernate-mapping>
