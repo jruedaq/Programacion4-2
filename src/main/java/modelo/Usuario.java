@@ -1,7 +1,8 @@
 package modelo;
-// Generated 17/10/2021 06:08:47 PM by Hibernate Tools 4.3.1
+// Generated 18/10/2021 09:28:16 PM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,38 +17,38 @@ public class Usuario  implements java.io.Serializable {
      private String direccion;
      private String nombre;
      private String apellido;
-     private int edad;
+     private Date fechaNacimiento;
      private String especialiicion;
      private String cargo;
-     private Set mascotas = new HashSet(0);
      private Set citas = new HashSet(0);
+     private Set mascotas = new HashSet(0);
      private Set historials = new HashSet(0);
 
     public Usuario() {
     }
 
 	
-    public Usuario(int idUsuario, Rol rol, String direccion, String nombre, String apellido, int edad, String especialiicion, String cargo) {
+    public Usuario(int idUsuario, Rol rol, String direccion, String nombre, String apellido, Date fechaNacimiento, String especialiicion, String cargo) {
         this.idUsuario = idUsuario;
         this.rol = rol;
         this.direccion = direccion;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
         this.especialiicion = especialiicion;
         this.cargo = cargo;
     }
-    public Usuario(int idUsuario, Rol rol, String direccion, String nombre, String apellido, int edad, String especialiicion, String cargo, Set mascotas, Set citas, Set historials) {
+    public Usuario(int idUsuario, Rol rol, String direccion, String nombre, String apellido, Date fechaNacimiento, String especialiicion, String cargo, Set citas, Set mascotas, Set historials) {
        this.idUsuario = idUsuario;
        this.rol = rol;
        this.direccion = direccion;
        this.nombre = nombre;
        this.apellido = apellido;
-       this.edad = edad;
+       this.fechaNacimiento = fechaNacimiento;
        this.especialiicion = especialiicion;
        this.cargo = cargo;
-       this.mascotas = mascotas;
        this.citas = citas;
+       this.mascotas = mascotas;
        this.historials = historials;
     }
    
@@ -86,12 +87,12 @@ public class Usuario  implements java.io.Serializable {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    public int getEdad() {
-        return this.edad;
+    public Date getFechaNacimiento() {
+        return this.fechaNacimiento;
     }
     
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
     public String getEspecialiicion() {
         return this.especialiicion;
@@ -107,13 +108,6 @@ public class Usuario  implements java.io.Serializable {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-    public Set getMascotas() {
-        return this.mascotas;
-    }
-    
-    public void setMascotas(Set mascotas) {
-        this.mascotas = mascotas;
-    }
     public Set getCitas() {
         return this.citas;
     }
@@ -121,17 +115,19 @@ public class Usuario  implements java.io.Serializable {
     public void setCitas(Set citas) {
         this.citas = citas;
     }
+    public Set getMascotas() {
+        return this.mascotas;
+    }
+    
+    public void setMascotas(Set mascotas) {
+        this.mascotas = mascotas;
+    }
     public Set getHistorials() {
         return this.historials;
     }
     
     public void setHistorials(Set historials) {
         this.historials = historials;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", rol=" + rol + ", direccion=" + direccion + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", especialiicion=" + especialiicion + ", cargo=" + cargo + ", mascotas=" + mascotas + ", citas=" + citas + ", historials=" + historials + '}';
     }
 
 
