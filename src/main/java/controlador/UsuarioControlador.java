@@ -18,29 +18,32 @@ import negocio.usuarioNeogcio;
  * @author User
  */
 public class UsuarioControlador {
+
     Usuario u = new Usuario();
     usuarioNeogcio st2 = new usuarioNeogcio();
     List<Usuario> itusuario = new ArrayList<>();
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    
-    
-    public void crearUser(){
-        
-        try {
-            st2.insert(u);
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println(e.getCause());
-        } 
+
+    public void crearUser() {
+
+        if (st2.findByIdentificacion(u.getIdUsuario()) != null) {
+            System.out.println("Usuario ya existe");
+        } else {
+            try {
+                st2.insert(u);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                System.out.println(e.getCause());
+            }
+        }
     }
-    
-    public void consultarUser() throws IOException{
-        
+
+    public void consultarUser() throws IOException {
+
         int id = Integer.parseInt(br.readLine());
-        if (id == 0){
+        if (id == 0) {
             System.out.println("Numero no especificado");
-        }else {
+        } else {
             try {
                 u = st2.findById(id);
                 System.out.println(u.toString());
@@ -49,19 +52,20 @@ public class UsuarioControlador {
                 System.out.println(e.getCause());
             }
         }
-            
+
     }
-    
-    public void consultarIdentificacion(){
+
+    public void consultarIdentificacion(int id) {
         try {
-            st2.findByIdentificacion(0);
+            Usuario response = st2.findByIdentificacion(id);
+            System.out.println(response);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println(e.getCause());
         }
     }
-    
-    public void actualizarUser(){
+
+    public void actualizarUser() {
         try {
             st2.update(u);
         } catch (Exception e) {
@@ -69,8 +73,8 @@ public class UsuarioControlador {
             System.out.println(e.getCause());
         }
     }
-    
-    public void listarUsuarios(){
+
+    public void listarUsuarios() {
         try {
             st2.findAlll();
         } catch (Exception e) {
@@ -78,8 +82,8 @@ public class UsuarioControlador {
             System.out.println(e.getCause());
         }
     }
-    
-    public void rolUser(){
+
+    public void rolUser() {
         try {
             st2.findByRol(0);
         } catch (Exception e) {
