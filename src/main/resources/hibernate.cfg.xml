@@ -42,13 +42,13 @@ Contributor(s):
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://153.92.215.89:3306/adminoneago_sistemaclinicavETITC?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">adminoneago_sistemaclinicavETITC</property>
-    <property name="hibernate.connection.password">Y6M0Ipp3J+Va</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sistemaclinicav?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">Lealmemo123</property>
     <mapping resource="modelo/Mascota.hbm.xml"/>
-    <mapping resource="modelo/Historial.hbm.xml"/>
-    <mapping resource="modelo/Rol.hbm.xml"/>
     <mapping resource="modelo/Usuario.hbm.xml"/>
+    <mapping resource="modelo/Rol.hbm.xml"/>
     <mapping resource="modelo/Cita.hbm.xml"/>
+    <mapping resource="modelo/Historial.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,5 +1,5 @@
 package modelo;
-// Generated 18/10/2021 09:28:16 PM by Hibernate Tools 4.3.1
+// Generated 17/10/2021 06:08:47 PM by Hibernate Tools 4.3.1
 
 
 
@@ -52,6 +52,14 @@ public class Historial  implements java.io.Serializable {
     public void setDictamen(String dictamen) {
         this.dictamen = dictamen;
     }
+
+    @Override
+    public String toString() {
+        return "Historial{" + "codHis=" + codHis + ", mascota=" + mascota.getIdMascota() + ", usuario=" + usuario.getIdUsuario() + ", dictamen=" + dictamen + '}';
+    }
+
+    
+    
 
 
 

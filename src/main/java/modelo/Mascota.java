@@ -1,8 +1,7 @@
 package modelo;
-// Generated 18/10/2021 09:28:16 PM by Hibernate Tools 4.3.1
+// Generated 17/10/2021 06:08:47 PM by Hibernate Tools 4.3.1
 
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +16,7 @@ public class Mascota  implements java.io.Serializable {
      private String raza;
      private String nombre;
      private String color;
-     private Date fechaNacimiento;
+     private int edad;
      private Set citas = new HashSet(0);
      private Set historials = new HashSet(0);
 
@@ -25,21 +24,21 @@ public class Mascota  implements java.io.Serializable {
     }
 
 	
-    public Mascota(int idMascota, Usuario usuario, String raza, String nombre, String color, Date fechaNacimiento) {
+    public Mascota(int idMascota, Usuario usuario, String raza, String nombre, String color, int edad) {
         this.idMascota = idMascota;
         this.usuario = usuario;
         this.raza = raza;
         this.nombre = nombre;
         this.color = color;
-        this.fechaNacimiento = fechaNacimiento;
+        this.edad = edad;
     }
-    public Mascota(int idMascota, Usuario usuario, String raza, String nombre, String color, Date fechaNacimiento, Set citas, Set historials) {
+    public Mascota(int idMascota, Usuario usuario, String raza, String nombre, String color, int edad, Set citas, Set historials) {
        this.idMascota = idMascota;
        this.usuario = usuario;
        this.raza = raza;
        this.nombre = nombre;
        this.color = color;
-       this.fechaNacimiento = fechaNacimiento;
+       this.edad = edad;
        this.citas = citas;
        this.historials = historials;
     }
@@ -79,12 +78,12 @@ public class Mascota  implements java.io.Serializable {
     public void setColor(String color) {
         this.color = color;
     }
-    public Date getFechaNacimiento() {
-        return this.fechaNacimiento;
+    public int getEdad() {
+        return this.edad;
     }
     
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
     public Set getCitas() {
         return this.citas;
@@ -100,6 +99,17 @@ public class Mascota  implements java.io.Serializable {
     public void setHistorials(Set historials) {
         this.historials = historials;
     }
+
+    @Override
+    public String toString() {
+        return "Mascota{" + "idMascota=" + idMascota + ", usuario=" + usuario.getIdUsuario() + ", raza=" + raza + ", nombre=" + nombre + ", color=" + color + ", edad=" + edad + " " + "años" +'}';
+    }
+
+   
+
+  
+
+    
 
 
 

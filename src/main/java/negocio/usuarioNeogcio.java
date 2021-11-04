@@ -83,4 +83,19 @@ public class usuarioNeogcio {
         return us;
     }
     
+    public List<Usuario> findByRol (int rol){
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session ss = sf.openSession();
+        Transaction tst = ss.beginTransaction();
+        List<Usuario> lst = new ArrayList<>();
+        Query query = ss.createQuery("FROM Usuario U WHERE U.rol.idRol = :id");
+        query.setParameter("id", rol);
+        lst = query.list();
+        ss.flush();
+        tst.commit();
+        ss.close();
+        return lst;
+        
+    }
+    
 }

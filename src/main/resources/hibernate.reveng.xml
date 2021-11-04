@@ -40,10 +40,10 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="adminoneago_sistemaclinicavETITC"/>
-  <table-filter match-name="HISTORIAL"/>
-  <table-filter match-name="CITA"/>
-  <table-filter match-name="MASCOTA"/>
-  <table-filter match-name="USUARIO"/>
-  <table-filter match-name="ROL"/>
+  <schema-selection match-catalog="sistemaclinicav"/>
+  <table-filter match-name="historial"/>
+  <table-filter match-name="mascota"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="cita"/>
+  <table-filter match-name="rol"/>
 </hibernate-reverse-engineering>
